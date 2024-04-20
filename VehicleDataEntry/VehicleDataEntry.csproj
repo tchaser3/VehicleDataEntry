@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EEAA32AB-8BBA-4C1A-B7ED-01434AF4B31A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VehicleDataEntry</RootNamespace>
+    <AssemblyName>VehicleDataEntry</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>blue_jay_icon_CM1_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataValidationDLL">
+      <HintPath>..\..\Blue Jay Class Library\DataValidationDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="DateSearchDLL">
+      <HintPath>..\..\Blue Jay Class Library\DateSearchDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="InspectionsDLL">
+      <HintPath>..\..\Blue Jay Class Library\InspectionsDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="KeyWordDLL">
+      <HintPath>..\..\Blue Jay Class Library\KeyWordDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="NewEmployeeDLL">
+      <HintPath>..\..\Blue Jay Class Library\NewEmployeeDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="NewEventLogDLL">
+      <HintPath>..\..\Blue Jay Class Library\NewEventLogDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="NewVehicleDLL">
+      <HintPath>..\..\Blue Jay Class Library\NewVehicleDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SafetyDLL">
+      <HintPath>..\..\Blue Jay Class Library\SafetyDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="VehicleAssignmentDLL">
+      <HintPath>..\..\Blue Jay Class Library\VehicleAssignmentDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="VehicleBodyDamageDLL">
+      <HintPath>..\..\Blue Jay Class Library\VehicleBodyDamageDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="VehicleHistoryDLL">
+      <HintPath>..\..\Blue Jay Class Library\VehicleHistoryDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="VehicleInfoDLL">
+      <HintPath>..\..\Blue Jay Class Library\VehicleInfoDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="VehicleInYardDLL">
+      <HintPath>..\..\Blue Jay Class Library\VehicleInYardDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="VehicleProblemsDLL">
+      <HintPath>..\..\Blue Jay Class Library\VehicleProblemsDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="VehiclesInShopDLL">
+      <HintPath>..\..\Blue Jay Class Library\VehiclesInShopDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="VehicleStatusDLL">
+      <HintPath>..\..\Blue Jay Class Library\VehicleStatusDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="VendorsDLL">
+      <HintPath>..\..\Blue Jay Class Library\VendorsDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="WeeklyInspectionsDLL">
+      <HintPath>..\..\Blue Jay Class Library\WeeklyInspectionsDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddDOTStatus.xaml.cs">
+      <DependentUpon>AddDOTStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddGPSStatus.xaml.cs">
+      <DependentUpon>AddGPSStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AutoSignInClass.cs" />
+    <Compile Include="CreateEditVehicle.xaml.cs">
+      <DependentUpon>CreateEditVehicle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DailyVehicleInspection.xaml.cs">
+      <DependentUpon>DailyVehicleInspection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayOpenWorkOrders.xaml.cs">
+      <DependentUpon>DisplayOpenWorkOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditVehicle.xaml.cs">
+      <DependentUpon>EditVehicle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnterWeeklyInspection.xaml.cs">
+      <DependentUpon>EnterWeeklyInspection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingOpenProblemsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExistingOpenProblemsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FindVehiclesInShopForm.xaml.cs">
+      <DependentUpon>FindVehiclesInShopForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewVehicleProblem.xaml.cs">
+      <DependentUpon>NewVehicleProblem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PleaseWait.xaml.cs">
+      <DependentUpon>PleaseWait.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PreventativeMaintenance.xaml.cs">
+      <DependentUpon>PreventativeMaintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProblemMenu.xaml.cs">
+      <DependentUpon>ProblemMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBodyDamage.xaml.cs">
+      <DependentUpon>ReportBodyDamage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectExistingWorkOrder.xaml.cs">
+      <DependentUpon>SelectExistingWorkOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectVendor.xaml.cs">
+      <DependentUpon>SelectVendor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SendEmailClass.cs" />
+    <Compile Include="SendVehicleToShop.xaml.cs">
+      <DependentUpon>SendVehicleToShop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateVehicleProblem.xaml.cs">
+      <DependentUpon>UpdateVehicleProblem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleAssignment.xaml.cs">
+      <DependentUpon>VehicleAssignment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleGPSDOTInfo.xaml.cs">
+      <DependentUpon>VehicleGPSDOTInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleInspectionProblem.xaml.cs">
+      <DependentUpon>VehicleInspectionProblem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleInYardForm.xaml.cs">
+      <DependentUpon>VehicleInYardForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleNeedingService.xaml.cs">
+      <DependentUpon>VehicleNeedingService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFMessagesClass.cs" />
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddDOTStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddGPSStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateEditVehicle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DailyVehicleInspection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplayOpenWorkOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditVehicle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EnterWeeklyInspection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindVehiclesInShopForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="NewVehicleProblem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PleaseWait.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PreventativeMaintenance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProblemMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportBodyDamage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectExistingWorkOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectVendor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SendVehicleToShop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateVehicleProblem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VehicleAssignment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VehicleGPSDOTInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VehicleInspectionProblem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VehicleInYardForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VehicleNeedingService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ExistingOpenProblemsDataSet.xsc">
+      <DependentUpon>ExistingOpenProblemsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ExistingOpenProblemsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExistingOpenProblemsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ExistingOpenProblemsDataSet.xss">
+      <DependentUpon>ExistingOpenProblemsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="blue_jay_icon_CM1_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

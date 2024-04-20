@@ -1,0 +1,81 @@
+﻿<Window x:Class="VehicleDataEntry.VehicleGPSDOTInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        xmlns:local="clr-namespace:VehicleDataEntry"
+        mc:Ignorable="d"
+        Title="VehicleGPSDOTInfo" Height="475" Width="525" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#20232A" />
+            <Setter Property="Foreground" Value="#FFC9E0DC" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <Path x:Name="PathIcon" Width="0" Height="0" Stretch="Fill" Fill="#4C87B3" HorizontalAlignment="Left" Margin="17,0,0,0" Data="F1 M 30.0833,22.1667L 50.6665,37.6043L 50.6665,38.7918L 30.0833,53.8333L 30.0833,22.1667 Z "/>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF635B5B" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter TargetName="PathIcon" Property="Fill" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="Background" Value="#FF635B5B" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter TargetName="PathIcon" Property="Fill" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF981E2A" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="AliceBlue" Offset="0"/>
+                <GradientStop Color="RoyalBlue" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid Height="23" VerticalAlignment="Top" Background="AliceBlue" MouseLeftButtonDown="Grid_MouseLeftButtonDown"/>
+        <Image HorizontalAlignment="Left" Height="82" Margin="163,19,0,0" VerticalAlignment="Top" Width="165" Stretch="Fill" Source="logo.png"/>
+        <Label x:Name="lblTitle" Content="Add/Edit Vehicle GPS/DOT Info" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Width="497"/>
+        <Button x:Name="btnSave" TabIndex="7" Content="Save" HorizontalAlignment="Left" Margin="366,233,0,0" VerticalAlignment="Top" Width="125" Height="55" FontSize="18" Click="btnSave_Click"/>
+        <Button x:Name="btnMainMenu" TabIndex="8" Content="Main Menu" HorizontalAlignment="Left" Margin="366,302,0,0" VerticalAlignment="Top" Width="125" Height="55" FontSize="18" Click="btnMainMenu_Click"/>
+        <Button x:Name="btnClose" TabIndex="9" Content="Close" HorizontalAlignment="Left" Margin="366,370,0,0" VerticalAlignment="Top" Width="125" Height="55" FontSize="18" Click="btnClose_Click"/>
+        <TextBox x:Name="txtBJCNumber" TabIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" CharacterCasing="Upper" HorizontalAlignment="Left" Height="29" Margin="192,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+        <Label x:Name="lblBJCNumber" Content="BJC Number" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="72,171,0,0" VerticalAlignment="Top" Width="115"/>
+        <ComboBox x:Name="cboCDLRequired" TabIndex="1" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="192,230,0,0" VerticalAlignment="Top" Width="149" Height="29" SelectionChanged="cboCDLRequired_SelectionChanged"/>
+        <Label x:Name="lblCDLRequired" Content="CDL Required" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="44,230,0,0" VerticalAlignment="Top" Width="143"/>
+        <ComboBox x:Name="cboMedicalCardRequired" TabIndex="2" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="192,264,0,0" VerticalAlignment="Top" Width="149" Height="29" SelectionChanged="cboMedicalCardRequired_SelectionChanged"/>
+        <Label x:Name="lblMedicalCardRequired" Content="Medical Card Required" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="26,264,0,0" VerticalAlignment="Top" Width="161"/>
+        <ComboBox x:Name="cboDOTStatus" TabIndex="3" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="192,300,0,0" VerticalAlignment="Top" Width="149" Height="29" SelectionChanged="cboDOTStatus_SelectionChanged"/>
+        <Label x:Name="lblDOTStatus" Content="DOT Status" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="26,300,0,0" VerticalAlignment="Top" Width="161"/>
+        <ComboBox x:Name="cboGPSPlugStatus" TabIndex="4" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="192,334,0,0" VerticalAlignment="Top" Width="149" Height="29" SelectionChanged="cboGPSPlugStatus_SelectionChanged"/>
+        <Label x:Name="lblGPSPlugStatus" Content="Plug Status" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="26,334,0,0" VerticalAlignment="Top" Width="161"/>
+        <TextBox x:Name="txtIMEI" TabIndex="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" CharacterCasing="Upper" HorizontalAlignment="Left" Height="29" Margin="192,368,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+        <Label x:Name="lblIMEI" Content="IMEI" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="72,368,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="txtTamperTag" TabIndex="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" CharacterCasing="Upper" HorizontalAlignment="Left" Height="29" Margin="192,402,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+        <Label x:Name="lblTamperTag" Content="Tamper Tag" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Left" Margin="72,402,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="btnFindBJCNumber" HorizontalAlignment="Left" Margin="367,160,0,0" VerticalAlignment="Top" Width="125" Height="55" Click="btnFindBJCNumber_Click">
+            <TextBlock x:Name="tblFindBJCNumber" TextWrapping="Wrap" Text="Find BJC Number" TextAlignment="Center"/>
+        </Button>
+    </Grid>
+</Window>

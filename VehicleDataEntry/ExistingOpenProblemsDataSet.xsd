@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ExistingOpenProblemsDataSet" targetNamespace="http://tempuri.org/ExistingOpenProblemsDataSet.xsd" xmlns:mstns="http://tempuri.org/ExistingOpenProblemsDataSet.xsd" xmlns="http://tempuri.org/ExistingOpenProblemsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ExistingOpenProblemsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ExistingOpenProblemsDataSet" msprop:Generator_UserDSName="ExistingOpenProblemsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="openorders" msprop:Generator_TableClassName="openordersDataTable" msprop:Generator_TableVarName="tableopenorders" msprop:Generator_TablePropName="openorders" msprop:Generator_RowDeletingName="openordersRowDeleting" msprop:Generator_RowChangingName="openordersRowChanging" msprop:Generator_RowEvHandlerName="openordersRowChangeEventHandler" msprop:Generator_RowDeletedName="openordersRowDeleted" msprop:Generator_UserTableName="openorders" msprop:Generator_RowChangedName="openordersRowChanged" msprop:Generator_RowEvArgName="openordersRowChangeEvent" msprop:Generator_RowClassName="openordersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProblemID" msprop:Generator_ColumnVarNameInTable="columnProblemID" msprop:Generator_ColumnPropNameInRow="ProblemID" msprop:Generator_ColumnPropNameInTable="ProblemIDColumn" msprop:Generator_UserColumnName="ProblemID" type="xs:int" />
+              <xs:element name="Problem" msprop:Generator_ColumnVarNameInTable="columnProblem" msprop:Generator_ColumnPropNameInRow="Problem" msprop:Generator_ColumnPropNameInTable="ProblemColumn" msprop:Generator_UserColumnName="Problem" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:openorders" />
+      <xs:field xpath="mstns:ProblemID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
